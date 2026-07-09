@@ -34,5 +34,7 @@ def graficar_histograma(resultados):
     plt.title('Simulación de la Máquina de Galton', fontsize=16)
     plt.xlabel('Distribución de las Canicas', fontsize=14)
     plt.ylabel('Cantidad de Canicas', fontsize=14)
+    #añadimos los números de cada contenedor debajo de cada barra para mostrar en que contenedor quedaron las canicas
+    plt.xticks(range(0, 25))
     #por último mostramos nuestro gráfico
     plt.show()
