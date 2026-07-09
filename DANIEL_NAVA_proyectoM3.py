@@ -38,3 +38,6 @@ def graficar_histograma(resultados):
     plt.xticks(range(0, 25))
     #por último mostramos nuestro gráfico
     plt.show()
+#hacemos el llamado de nuestras funciones para simular las canicas y graficar el histograma
+resultados = simular_canicas()
+graficar_histograma(resultados)
