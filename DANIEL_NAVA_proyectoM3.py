@@ -24,3 +24,8 @@ def simular_canicas(total_canicas=3000, total_niveles=12):
         resultados_contenedores.append(contenedor_actual)
     #devolvemos la lista con los contenedores finales de cada canica
     return resultados_contenedores
+#creamos nuestra función para mostrar nuestro gráfico con matplotlib
+def graficar_histograma(resultados):
+    #creamos nuestro gráfico y definimos su tamaño
+    plt.figure(figsize=(10, 6))
+    
