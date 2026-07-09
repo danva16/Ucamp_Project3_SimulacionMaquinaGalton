@@ -28,4 +28,6 @@ def simular_canicas(total_canicas=3000, total_niveles=12):
 def graficar_histograma(resultados):
     #creamos nuestro gráfico y definimos su tamaño
     plt.figure(figsize=(10, 6))
+    #dibujamos nuestro gráfico y le damos el estilo de barras, además de definir el color y el ancho de las barras
+    plt.hist(resultados, bins=range(0, 24), color='66B2FF', edgecolor='FF0000', width=0.8)
     
