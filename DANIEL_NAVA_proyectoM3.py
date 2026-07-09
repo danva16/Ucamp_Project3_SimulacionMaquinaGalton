@@ -36,11 +36,11 @@ def graficar_histograma(resultados):
     for cantidad, posicion in zip(cuentas, cajas):
         #solo ponemos el número si es mayor de 0
         if cantidad > 0:
-            plt.text(posicion, cantidad + 10, str(int(cantidad)), ha='center', va='bottom', fontsize=10, color="#454242")
+            plt.text(posicion, cantidad + 5, str(int(cantidad)), ha='center', va='bottom', fontsize=12, color="#ff0000")
     #establecemos el título de nuestro gráfico y nombre a los ejes
-    plt.title('Simulación de la Máquina de Galton', fontsize=16)
-    plt.xlabel('Distribución de las Canicas', fontsize=14)
-    plt.ylabel('Cantidad de Canicas', fontsize=14)
+    plt.title('Simulación de la Máquina de Galton', fontsize=22, fontweight='bold')
+    plt.xlabel('Distribución de las Canicas', fontsize=20)
+    plt.ylabel('Cantidad de Canicas', fontsize=20)
     #añadimos los números de cada contenedor debajo de cada barra para mostrar en que contenedor quedaron las canicas
     plt.xticks(range(0, 25))
     #por último mostramos nuestro gráfico
