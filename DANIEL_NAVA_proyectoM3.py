@@ -9,24 +9,17 @@ def simular_canicas(total_canicas=3000, total_niveles=12):
     resultados_contenedores = []
     #bucle para simular el paso de cada canica por los niveles de obstáculos
     for canica in range(total_canicas):
-        #inicializamos la posición de la canica en la posición central alta (0)
-        contenedor_actual = 0
+        #inicializamos la posición de la canica en la posición central alta (12) de los 24 contenedores, ya que la posición 0 es la extrema izquierda y la posición 23 es la extrema derecha
+        contenedor_actual = 12
         #cada canica pasa por 12 niveles de obstáculos
         for nivel in range(total_niveles):
             #generamos un número aleatorio entre 0 y 1 como es el estándar, simulando si va a la izquierda o la derecha
             desicion = random.random()
             #con un if especificamos que se realiza si va a la derecha o a la izquierda, si es mayor a 0.5 va a la derecha y si es menor o igual a 0.5 va a la izquierda
             if desicion > 0.5:
-                #con un if especificamos que se realiza cuando la posición de la canica esta en la posición a la extrema derecha o en otro
-                if contenedor_actual == 11: #si se encuentra a la extrema derecha no se le permite ir a la derecha y se queda en la misma posición
-                    contenedor_actual += 0
-                else: 
-                    contenedor_actual += 1 #si se encuentra en cualquier otra posición se le permite ir a la derecha y se le suma 1 a su posición
-            else: 
-                if contenedor_actual == 0: #si se encuentra a la extrema izquierda no se le permite ir a la izquierda y se queda en la misma posición
-                    contenedor_actual += 0
-                else:
-                    contenedor_actual -= 1 #si se encuentra en cualquier otra posición se le permite ir a la izquierda y se le resta 1 a su posición
+                contenedor_actual += 1 #si va a la derecha se le suma 1 a su posición
+            else:
+                contenedor_actual -= 1 #si va a la izquierda se le resta 1 a su posición
         #cuando la canica termina de pasar los 12 niveles, guardamos su contenedor final
         resultados_contenedores.append(contenedor_actual)
     #devolvemos la lista con los contenedores finales de cada canica
