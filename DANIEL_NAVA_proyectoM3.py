@@ -29,7 +29,7 @@ def graficar_histograma(resultados):
     #creamos nuestro gráfico y definimos su tamaño
     plt.figure(figsize=(10, 6))
     #dibujamos nuestro gráfico y le damos el estilo de barras, además de definir el color y el ancho de las barras
-    plt.hist(resultados, bins=range(0, 24), color='66B2FF', edgecolor='FF0000', width=0.8)
+    plt.hist(resultados, bins=range(0, 26), color='66B2FF', edgecolor='FF0000', width=0.8)
     #establecemos el título de nuestro gráfico y nombre a los ejes
     plt.title('Simulación de la Máquina de Galton', fontsize=16)
     plt.xlabel('Distribución de las Canicas', fontsize=14)
