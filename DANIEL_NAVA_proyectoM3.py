@@ -29,7 +29,14 @@ def graficar_histograma(resultados):
     #creamos nuestro gráfico y definimos su tamaño
     plt.figure(figsize=(10, 6))
     #dibujamos nuestro gráfico y le damos el estilo de barras, además de definir el color y el ancho de las barras
-    plt.hist(resultados, bins=range(0, 26), color='#66B2FF', edgecolor='#FF0000', align='left')
+    #almacenamos el resultado del grafico en variables
+    #'cuentas' es la cantidad de canicas que cayeron en cada contenedor y 'cajas' son las posiciones de las barras en el eje X
+    cuentas, cajas, _ = plt.hist(resultados, bins=range(0, 26), color='#66B2FF', edgecolor='#FF0000', align='left')
+    #con un for recorremos cada barra del gráfico y añadimos el número de canicas que cayeron en cada contenedor encima de cada barra
+    for cantidad, posicion in zip(cuentas, cajas):
+        #solo ponemos el número si es mayor de 0
+        if cantidad > 0:
+            plt.text(posicion, cantidad + 10, str(int(cantidad)), ha='center', va='bottom', fontsize=10, color="#454242")
     #establecemos el título de nuestro gráfico y nombre a los ejes
     plt.title('Simulación de la Máquina de Galton', fontsize=16)
     plt.xlabel('Distribución de las Canicas', fontsize=14)
